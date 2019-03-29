@@ -110,9 +110,13 @@ public class UserControllerUnitTest {
         mockMvc.perform(get("/users/{id}", 2))
                 .andExpect(status().isNotFound());
 
-      //  verify(userService, times(1)).findById(1);
+        mockMvc.perform(get("/users/{id}", 2))
+                .andExpect(status().isNotFound());
+
+ //      verify(userService, times(1)).findById(2);
       //  verifyNoMoreInteractions(userService);
     }
+
 
     // =========================================== Create New User ========================================
 

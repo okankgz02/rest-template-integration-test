@@ -36,6 +36,9 @@ public class UserController {
         return new ResponseEntity<List<User>>(users, HttpStatus.OK);
     }
 
+
+
+
     // =========================================== Get User By ID =========================================
 
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
@@ -53,6 +56,13 @@ public class UserController {
 
     // =========================================== Create New User ========================================
 
+
+
+
+
+
+
+
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Void> create(@RequestBody User user, UriComponentsBuilder ucBuilder){
         LOG.info("creating new user: {}", user);
@@ -69,10 +79,10 @@ public class UserController {
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
 
-    // =========================================== Update Existing User ===================================
 
     @RequestMapping(value = "{id}", method = RequestMethod.PUT)
     public ResponseEntity<User> update(@PathVariable int id, @RequestBody User user){
+        // =========================================== Update Existing User ===================================
         LOG.info("updating user: {}", user);
         User currentUser = userService.findById(id);
 
@@ -85,6 +95,7 @@ public class UserController {
         currentUser.setUsername(user.getUsername());
 
         userService.update(user);
+
         return new ResponseEntity<User>(currentUser, HttpStatus.OK);
     }
 

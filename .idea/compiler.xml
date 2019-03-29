@@ -9,8 +9,5 @@
         <module name="rest-template-integration-test" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="rest-template-integration-test" target="1.7" />
-    </bytecodeTargetLevel>
   </component>
 </project>
